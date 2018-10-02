@@ -25,6 +25,7 @@
     "es6-promise": "^4.2.5",
     "express": "^4.16.3",
     "path": "^0.12.7",
-    "pg-promise": "^8.4.6"
+    "pg-promise": "^8.4.6",
+    "typescript": "^3.1.1"
   }
 }

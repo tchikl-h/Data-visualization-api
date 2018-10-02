@@ -2,6 +2,7 @@ import {Promise} from 'es6-promise';
 import * as fs from 'fs';
 import {IMain, IDatabase} from 'pg-promise';
 import * as pgPromise from 'pg-promise';
+require('dotenv').config()
 
 // your protocol extensions:
 interface IExtensions {
@@ -9,13 +10,14 @@ interface IExtensions {
 }
 
 export default class Aggregator {
+    
     public cn = {
         user: process.env.USER,
         host: process.env.HOST,
         database: process.env.DATABASE,
         password: process.env.PASSWORD,
-        port: process.env.PORT,
-        ssl: true
+        port: 5432,
+        ssl: true,
     };
     public options = {
         extend: obj => {
@@ -70,7 +72,7 @@ export default class Aggregator {
     }
 }
 // let agg = new Aggregator;
-// agg.db.executeQuery("select relation from data;")
+// agg.db.executeQuery("CREATE TABLE data(relation text[][], pagetitle text, title text, url text, hasheader boolean, headerposition text, tabletype text, tablenum integer, s3link text, recordendoffset integer, recordoffset integer, tableorientation text, tablecontexttimestampbeforetable text, tablecontexttimestampaftertable text, textbeforetable text, textaftertable text, haskeycolumn boolean, keycolumnindex integer, headerrowindex integer, lastmodified text);")
 // .then(res => {
 //     console.log(res);
 // })

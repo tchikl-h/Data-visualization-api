@@ -21,6 +21,7 @@
   "homepage": "https://github.com/tchikl-h/Data-visualization-api#readme",
   "dependencies": {
     "@types/node": "^10.11.3",
+    "dotenv": "^6.0.0",
     "es6-promise": "^4.2.5",
     "express": "^4.16.3",
     "path": "^0.12.7",

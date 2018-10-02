@@ -11,14 +11,14 @@ interface IExtensions {
 
 export default class Aggregator {
     
-    public cn = {
-        user: process.env.USER,
-        host: process.env.HOST,
-        database: process.env.DATABASE,
-        password: process.env.PASSWORD,
-        port: 5432,
-        ssl: true,
-    };
+    // public cn = {
+    //     user: process.env.USER,
+    //     host: process.env.HOST,
+    //     database: process.env.DATABASE,
+    //     password: process.env.PASSWORD,
+    //     port: 5432,
+    //     ssl: true,
+    // };
     public options = {
         extend: obj => {
             obj.executeQuery = query => {
@@ -27,7 +27,7 @@ export default class Aggregator {
         }
     }
     public pgp: IMain = pgPromise(this.options);
-    public db = <IDatabase<IExtensions>&IExtensions>this.pgp(this.cn);
+    public db = <IDatabase<IExtensions>&IExtensions>this.pgp(process.env.DATABASE_URL+"?ssl=true");
     public data: any;
 
     constructor() {

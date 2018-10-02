@@ -15,13 +15,13 @@ app.use(function(req, res, next) {
 // send the user to index html page inspite of the url
 app.get('/api/v1/all', (req, res) => {
   
-  // res.send('response');
-  let agg = new Aggregator;
-  agg.db.executeQuery('select relation from data;')
-  .then((response) => {
-    console.log(response);
-    res.send(response);
-  })
+  res.send('response');
+  // let agg = new Aggregator;
+  // agg.db.executeQuery('select relation from data;')
+  // .then((response) => {
+  //   console.log(response);
+  //   res.send(response);
+  // })
 });
 
 app.listen(port);

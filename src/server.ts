@@ -1,7 +1,7 @@
 import express = require('express');
 import * as path from 'path';
 import Aggregator from './Aggregator';
-const port = process.env.PORT || 8080;
+const port = 8080;
 const app = express();
 
 app.use(function(req, res, next) {
